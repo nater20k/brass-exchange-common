@@ -8,8 +8,14 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "pack-instruments": "cd dist/instruments && npm pack",
-    "pack-constants": "cd dist/constants && npm pack"
+    "pub-instruments": "npm run patch-instruments && ng build instruments --prod && cd dist/instruments && npm pack && npm publish && cd ../..",
+    "pub-constants": "npm run patch-constants && ng build constants --prod && cd dist/constants && npm pack && npm publish && cd ../..",
+    "pub-users": "npm run patch-users && ng build users --prod && cd dist/users && npm pack && npm publish && cd ../..",
+    "pub-forms": "npm run patch-forms && ng build form-control --prod && cd dist/form-control && npm pack && npm publish && cd ../..",
+    "patch-instruments": "cd projects/instruments && npm version patch && cd ../..",
+    "patch-constants": "cd projects/constants && npm version patch && cd ../..",
+    "patch-users": "cd projects/users && npm version patch && cd ../..",
+    "patch-forms": "cd projects/form-control && npm version patch && cd ../.."
   },
   "private": true,
   "dependencies": {

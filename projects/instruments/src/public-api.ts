@@ -8,3 +8,4 @@ export * from './lib/instruments.module';
 export * from './lib/forms/form-group';
 export * from './lib/forms/form-builder.service';
 export * from './lib/adapters/instrument-adapter.service';
+export * from './lib/instrument';

@@ -122,6 +122,46 @@
           }
         }
       }
+    },
+    "form-control": {
+      "projectType": "library",
+      "root": "projects/form-control",
+      "sourceRoot": "projects/form-control/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/form-control/tsconfig.lib.json",
+            "project": "projects/form-control/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/form-control/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/form-control/src/test.ts",
+            "tsConfig": "projects/form-control/tsconfig.spec.json",
+            "karmaConfig": "projects/form-control/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/form-control/tsconfig.lib.json",
+              "projects/form-control/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "users",

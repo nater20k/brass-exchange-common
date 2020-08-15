@@ -1,7 +1,7 @@
 import {
   ForSaleListing,
   Instrument,
-} from '../../../instruments/src/lib/instrument';
+} from '@nater20k/brass-exchange-instruments';
 
 export interface User {
   uid: string;

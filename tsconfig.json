@@ -24,6 +24,12 @@
     },
     {
       "path": "./projects/constants/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/form-control/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/form-control/tsconfig.spec.json"
     }
 ]
 }

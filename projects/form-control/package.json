@@ -1,0 +1,12 @@
+{
+  "name": "@nater20k/form-control",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^10.0.9",
+    "@angular/core": "^10.0.9"
+  },
+  "dependencies": {
+    "@angular/forms": "^10.0.9",
+    "tslib": "^2.0.0"
+  }
+}
