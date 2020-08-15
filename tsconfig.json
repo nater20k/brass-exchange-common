@@ -6,5 +6,24 @@
 */
 {
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./projects/users/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/users/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/instruments/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/instruments/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/constants/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/constants/tsconfig.spec.json"
+    }
+]
 }

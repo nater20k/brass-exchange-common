@@ -2,5 +2,130 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "users": {
+      "projectType": "library",
+      "root": "projects/users",
+      "sourceRoot": "projects/users/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/users/tsconfig.lib.json",
+            "project": "projects/users/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/users/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/users/src/test.ts",
+            "tsConfig": "projects/users/tsconfig.spec.json",
+            "karmaConfig": "projects/users/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/users/tsconfig.lib.json",
+              "projects/users/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "instruments": {
+      "projectType": "library",
+      "root": "projects/instruments",
+      "sourceRoot": "projects/instruments/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/instruments/tsconfig.lib.json",
+            "project": "projects/instruments/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/instruments/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/instruments/src/test.ts",
+            "tsConfig": "projects/instruments/tsconfig.spec.json",
+            "karmaConfig": "projects/instruments/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/instruments/tsconfig.lib.json",
+              "projects/instruments/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "constants": {
+      "projectType": "library",
+      "root": "projects/constants",
+      "sourceRoot": "projects/constants/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/constants/tsconfig.lib.json",
+            "project": "projects/constants/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/constants/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/constants/src/test.ts",
+            "tsConfig": "projects/constants/tsconfig.spec.json",
+            "karmaConfig": "projects/constants/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/constants/tsconfig.lib.json",
+              "projects/constants/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "users",
+  "cli": {
+    "analytics": "7e9b6f7c-2d3c-40a4-bc30-6b1456659315"
+  }
 }
