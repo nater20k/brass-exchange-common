@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   ForSaleInstrumentListingFormGroup,
   InstrumentFormGroup,
-} from '../forms/form-group';
+} from '../forms/instrument-form-group';
 import { ForSaleListing, Instrument } from '../instrument';
 
 @Injectable({

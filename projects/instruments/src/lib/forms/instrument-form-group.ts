@@ -85,20 +85,16 @@ export class ForSaleInstrumentListingFormGroup extends InstrumentFormGroup {
     super(formGroup);
   }
 
-  get title(): string {
-    return this.formGroup.get('title').value || '';
-  }
-
   get views(): number {
-    return this.formGroup.get('title').value || 0;
+    return this.formGroup.get('views').value || 0;
   }
 
   get favorites(): number {
-    return this.formGroup.get('title').value || 0;
+    return this.formGroup.get('favorites').value || 0;
   }
 
   get dateCreated(): Date {
-    return this.formGroup.get('title').value || new Date();
+    return this.formGroup.get('dateCreated').value || new Date();
   }
 
   get isActive(): boolean {

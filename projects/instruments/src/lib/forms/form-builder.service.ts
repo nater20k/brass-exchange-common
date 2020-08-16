@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { FormControlService } from './form-control.service';
+import { FormControlService } from '@nater20k/form-control';
 import { Instrument } from '../instrument';
 
 @Injectable({
@@ -99,7 +99,7 @@ export class FormBuilderService {
       finish: this.fc.fetchRequiredFormControl(),
       boreSize: this.fc.fetchBasicFormControl(),
       size: this.fc.fetchBasicFormControl(),
-      sellerEmail: this.fc.fetchRequiredFormControl(),
+      sellerEmail: this.fc.fetchBasicFormControl(),
       isActive: this.fc.fetchBasicFormControl(),
       views: this.fc.fetchBasicFormControl(),
       favorites: this.fc.fetchBasicFormControl(),
