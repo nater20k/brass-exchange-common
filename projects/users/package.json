@@ -1,18 +1,13 @@
 {
   "name": "@nater20k/brass-exchange-users",
-  "version": "0.0.8",
+  "version": "0.0.11",
   "peerDependencies": {
     "@angular/common": "^10.0.9",
     "@angular/core": "^10.0.9",
-    "@nater20k/brass-exchange-instruments": "0.0.2",
-    "firebase": "^7.18.0"
+    "firebase": "^7.18.0",
+    "@nater20k/form-control": "~0.0.6"
   },
   "dependencies": {
-    "@nater20k/form-control": "0.0.2",
     "tslib": "^2.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nater20k/brass-exchange-common.git"
   }
 }
