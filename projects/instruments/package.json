@@ -1,10 +1,13 @@
 {
   "name": "@nater20k/brass-exchange-instruments",
-  "version": "0.0.10",
+  "version": "1.0.1",
+  "scripts": {
+    "pub": "ng build --prod && npm pack && npm publish --access=public"
+  },
   "peerDependencies": {
     "@angular/common": "^10.0.9",
     "@angular/core": "^10.0.9",
-    "@nater20k/form-control": "~0.0.6"
+    "@nater20k/form-control": "^1.0.0"
   },
   "dependencies": {
     "tslib": "^2.0.0"

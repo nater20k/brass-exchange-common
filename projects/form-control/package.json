@@ -1,6 +1,9 @@
 {
   "name": "@nater20k/form-control",
-  "version": "0.0.6",
+  "version": "1.0.5",
+  "scripts": {
+    "pub": "ng build --prod && npm pack && npm publish --access=public"
+  },
   "peerDependencies": {
     "@angular/common": "^10.0.9",
     "@angular/core": "^10.0.9"

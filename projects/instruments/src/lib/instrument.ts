@@ -12,10 +12,13 @@ export interface Instrument {
   photoUrls: string[];
   type: string;
   valveCount?: number;
-  finish: 'raw' | 'silver' | 'lacquer';
+  finish: Finish;
   boreSize?: number;
-  size?: '3/4' | '4/4' | '5/4' | '6/4';
+  size?: TubaSize;
 }
+
+export type Finish = 'raw' | 'silver' | 'lacquer';
+export type TubaSize = '3/4' | '4/4' | '5/4' | '6/4';
 
 interface Location {
   streetAddress?: string;
@@ -31,4 +34,13 @@ export interface ForSaleListing extends Instrument {
   isActive: boolean;
   isSold: boolean;
   isShippingAvailable: boolean;
+  comments?: Comment[];
+}
+
+export interface Comment {
+  id: string;
+  content: string;
+  username: string;
+  createdDate: Date;
+  likes: number;
 }
