@@ -1,16 +1,13 @@
 import { Injectable } from '@angular/core';
-import { auth } from 'firebase/app';
 import { User } from '../user';
 import { UserFormGroup } from '../forms/user-form-group';
+import { auth } from 'firebase';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserAdapterService {
-  mapUserFromRegister(
-    user: auth.UserCredential,
-    userFormGroup?: UserFormGroup
-  ): User {
+  mapUserFromRegister(user: auth.UserCredential, userFormGroup?: UserFormGroup): User {
     return userFormGroup
       ? {
           ...this.mapFormGroupUser(userFormGroup),

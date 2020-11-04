@@ -1,6 +1,6 @@
 {
   "name": "@nater20k/brass-exchange-instruments",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "scripts": {
     "pub": "ng build --prod && npm pack && npm publish --access=public"
   },

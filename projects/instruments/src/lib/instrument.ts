@@ -38,7 +38,6 @@ export interface ForSaleListing extends Instrument {
 }
 
 export interface Comment {
-  id: string;
   content: string;
   username: string;
   createdDate: Date;

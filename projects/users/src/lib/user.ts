@@ -1,7 +1,4 @@
-import {
-  ForSaleListing,
-  Instrument,
-} from '@nater20k/brass-exchange-instruments';
+import { ForSaleListing } from "@nater20k/brass-exchange-instruments";
 
 export interface User {
   uid: string;
@@ -14,5 +11,5 @@ export interface User {
   rating: number;
   photoUrl: string;
   principalInstrument?: string;
-  favoritedInstruments?: Instrument[];
+  favoritedInstruments?: ForSaleListing[];
 }
