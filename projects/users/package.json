@@ -1,13 +1,13 @@
 {
   "name": "@nater20k/brass-exchange-users",
-  "version": "1.0.3",
+  "version": "1.0.16",
   "scripts": {
     "pub": "ng build --prod && npm pack && npm publish --access=public"
   },
   "peerDependencies": {
     "@angular/common": "^10.0.9",
     "@angular/core": "^10.0.9",
-    "firebase": "^7.18.0"
+    "firebase": "^8.0.0"
   },
   "dependencies": {
     "@nater20k/brass-exchange-instruments": "^1.0.1",

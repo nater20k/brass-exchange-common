@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { User } from '../user';
 import { UserFormGroup } from '../forms/user-form-group';
-import { auth } from 'firebase';
+import firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserAdapterService {
-  mapUserFromRegister(user: auth.UserCredential, userFormGroup?: UserFormGroup): User {
+  mapUserFromRegister(user: firebase.auth.UserCredential, userFormGroup?: UserFormGroup): User {
     return userFormGroup
       ? {
           ...this.mapFormGroupUser(userFormGroup),
@@ -16,28 +16,29 @@ export class UserAdapterService {
       : this.mapFullFirebaseUser(user);
   }
 
-  private mapPartialFirebaseUser(user: auth.UserCredential) {
+  private mapPartialFirebaseUser({ user }: firebase.auth.UserCredential) {
     return {
-      uid: user.user.uid,
-      displayName: user.user.displayName,
-      email: user.user.email,
-      dateAccountCreated: new Date(user.user.metadata.creationTime),
-      photoUrl: user.user.photoURL,
+      uid: user.uid,
+      displayName: user.displayName,
+      email: user.email,
+      dateAccountCreated: new Date(user.metadata.creationTime),
+      photoUrl: user.photoURL,
     };
   }
 
-  private mapFullFirebaseUser(user: any) {
+  private mapFullFirebaseUser({ user, additionalUserInfo }: firebase.auth.UserCredential) {
     return {
-      uid: user.user.uid,
-      displayName: user.user.displayName,
-      firstName: user.additionalUserInfo.profile['given_name'],
-      lastName: user.additionalUserInfo.profile['family_name'],
-      email: user.user.email,
-      dateAccountCreated: new Date(user.user.metadata.creationTime),
-      photoUrl: user.user.photoURL,
+      uid: user.uid,
+      displayName: user.displayName,
+      firstName: additionalUserInfo.profile['given_name'],
+      lastName: additionalUserInfo.profile['family_name'],
+      email: user.email,
+      dateAccountCreated: new Date(user.metadata.creationTime),
+      photoUrl: user.photoURL,
       principalInstrument: '',
-      instrumentsListed: <any>[],
+      instrumentsListed: [],
       rating: 0,
+      messageThreadIds: [],
     };
   }
 
@@ -46,8 +47,9 @@ export class UserAdapterService {
       firstName: userFormGroup.firstName,
       lastName: userFormGroup.lastName,
       principalInstrument: userFormGroup.principalInstrument,
-      instrumentsListed: <any>[],
+      instrumentsListed: [],
       rating: 0,
+      messageThreadIds: [],
     };
   }
 }
