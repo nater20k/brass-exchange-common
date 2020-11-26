@@ -12,5 +12,5 @@ export interface User {
   photoUrl: string;
   principalInstrument?: string;
   favoritedInstruments?: ForSaleListing[];
-  messageThreadIds: string[];
+  messageThreadIds?: string[];
 }
