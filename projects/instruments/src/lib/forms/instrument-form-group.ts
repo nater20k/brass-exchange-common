@@ -97,6 +97,10 @@ export class ForSaleInstrumentListingFormGroup extends InstrumentFormGroup {
     return this.formGroup.get('dateCreated').value || new Date();
   }
 
+  get sellerUsername(): string {
+    return this.formGroup.get('sellerUsername').value || '';
+  }
+
   get isActive(): boolean {
     return this.formGroup.get('isActive').value || false;
   }

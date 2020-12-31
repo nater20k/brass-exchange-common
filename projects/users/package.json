@@ -1,6 +1,6 @@
 {
   "name": "@nater20k/brass-exchange-users",
-  "version": "1.0.17",
+  "version": "1.0.19",
   "scripts": {
     "pub": "ng build --prod && npm pack && npm publish --access=public"
   },

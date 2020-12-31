@@ -100,6 +100,7 @@ export class FormBuilderService {
       boreSize: this.fc.fetchBasicFormControl(),
       size: this.fc.fetchBasicFormControl(),
       sellerEmail: this.fc.fetchBasicFormControl(),
+      sellerUsername: this.fc.fetchBasicFormControl(),
       isActive: this.fc.fetchBasicFormControl(),
       views: this.fc.fetchBasicFormControl(),
       favorites: this.fc.fetchBasicFormControl(),

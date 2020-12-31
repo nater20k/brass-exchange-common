@@ -1,4 +1,5 @@
 import { ForSaleListing } from '@nater20k/brass-exchange-instruments';
+import { ThreadMetaData } from './message';
 
 export interface User {
   uid: string;
@@ -12,5 +13,5 @@ export interface User {
   photoUrl: string;
   principalInstrument?: string;
   favoritedInstruments?: ForSaleListing[];
-  messageThreadIds?: string[];
+  threads?: ThreadMetaData[];
 }

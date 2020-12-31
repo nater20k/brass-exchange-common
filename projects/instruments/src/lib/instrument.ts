@@ -30,6 +30,7 @@ interface Location {
 export interface ForSaleListing extends Instrument {
   views: number;
   favorites: number;
+  sellerUsername: string;
   dateCreated: Date;
   isActive: boolean;
   isSold: boolean;

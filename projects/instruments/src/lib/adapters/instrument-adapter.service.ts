@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  ForSaleInstrumentListingFormGroup,
-  InstrumentFormGroup,
-} from '../forms/instrument-form-group';
+import { ForSaleInstrumentListingFormGroup, InstrumentFormGroup } from '../forms/instrument-form-group';
 import { ForSaleListing, Instrument } from '../instrument';
 
 @Injectable({
@@ -10,9 +7,7 @@ import { ForSaleListing, Instrument } from '../instrument';
 })
 export class InstrumentAdapterService {
   constructor() {}
-  mapInstrumentFromInstrumentFormGroup(
-    instrumentFormGroup: InstrumentFormGroup
-  ): Instrument {
+  mapInstrumentFromInstrumentFormGroup(instrumentFormGroup: InstrumentFormGroup): Instrument {
     const {
       price,
       brand,
@@ -69,6 +64,7 @@ export class InstrumentAdapterService {
       key,
       manufactureDate,
       sellerEmail,
+      sellerUsername,
       streetAddress,
       city,
       state,
@@ -103,6 +99,7 @@ export class InstrumentAdapterService {
       valveCount,
       finish,
       boreSize,
+      sellerUsername,
       isSold,
       views,
       favorites,
