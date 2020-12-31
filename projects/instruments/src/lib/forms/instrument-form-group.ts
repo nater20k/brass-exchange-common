@@ -1,14 +1,10 @@
 import { FormGroup } from '@angular/forms';
 
 export class InstrumentFormGroup {
-  constructor(public formGroup: FormGroup) {}
+  constructor(public formGroup: FormGroup, public ownerId: string) {}
 
   get type(): string {
     return this.formGroup.get('type').value || '';
-  }
-
-  get price(): number {
-    return this.formGroup.get('price').value || '';
   }
 
   get brand(): string {
@@ -29,10 +25,6 @@ export class InstrumentFormGroup {
 
   get manufactureDate(): Date {
     return this.formGroup.get('manufactureDate').value || '';
-  }
-
-  get isCaseIncluded(): boolean {
-    return this.formGroup.get('isCaseIncluded').value || '';
   }
 
   get description(): string {
@@ -74,15 +66,19 @@ export class InstrumentFormGroup {
   get size(): '3/4' | '4/4' | '5/4' | '6/4' {
     return this.formGroup.get('size').value || '';
   }
-
-  get sellerEmail(): string {
-    return this.formGroup.get('sellerEmail').value || '';
-  }
 }
 
 export class ForSaleInstrumentListingFormGroup extends InstrumentFormGroup {
-  constructor(public formGroup: FormGroup) {
-    super(formGroup);
+  constructor(public formGroup: FormGroup, private owerId: string) {
+    super(formGroup, owerId);
+  }
+
+  get price(): number {
+    return this.formGroup.get('price').value || '';
+  }
+
+  get isCaseIncluded(): boolean {
+    return this.formGroup.get('isCaseIncluded').value || '';
   }
 
   get views(): number {
@@ -95,10 +91,6 @@ export class ForSaleInstrumentListingFormGroup extends InstrumentFormGroup {
 
   get dateCreated(): Date {
     return this.formGroup.get('dateCreated').value || new Date();
-  }
-
-  get sellerUsername(): string {
-    return this.formGroup.get('sellerUsername').value || '';
   }
 
   get isActive(): boolean {

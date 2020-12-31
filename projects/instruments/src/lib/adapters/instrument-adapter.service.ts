@@ -9,14 +9,12 @@ export class InstrumentAdapterService {
   constructor() {}
   mapInstrumentFromInstrumentFormGroup(instrumentFormGroup: InstrumentFormGroup): Instrument {
     const {
-      price,
       brand,
       model,
       boreSize,
-      isCaseIncluded,
       key,
       manufactureDate,
-      sellerEmail,
+      ownerId,
       streetAddress,
       city,
       state,
@@ -28,19 +26,17 @@ export class InstrumentAdapterService {
       finish,
     } = instrumentFormGroup;
     return {
-      price,
       brand,
       model,
       key,
       manufactureDate,
-      sellerEmail,
+      ownerId,
       location: {
         streetAddress,
         city,
         state,
         zip,
       },
-      isCaseIncluded,
       description,
       photoUrls,
       type,
@@ -63,8 +59,7 @@ export class InstrumentAdapterService {
       isActive,
       key,
       manufactureDate,
-      sellerEmail,
-      sellerUsername,
+      ownerId,
       streetAddress,
       city,
       state,
@@ -85,7 +80,7 @@ export class InstrumentAdapterService {
       model,
       key,
       manufactureDate,
-      sellerEmail,
+      ownerId,
       location: {
         streetAddress,
         city,
@@ -99,7 +94,6 @@ export class InstrumentAdapterService {
       valveCount,
       finish,
       boreSize,
-      sellerUsername,
       isSold,
       views,
       favorites,

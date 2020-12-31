@@ -1,13 +1,11 @@
 export interface Instrument {
   id?: string;
-  price: number;
   brand: string;
   model: string;
   key: string;
   manufactureDate: Date;
-  sellerEmail: string;
+  ownerId: string;
   location: Location;
-  isCaseIncluded: boolean;
   description: string;
   photoUrls: string[];
   type: string;
@@ -28,13 +26,14 @@ interface Location {
 }
 
 export interface ForSaleListing extends Instrument {
+  price: number;
   views: number;
   favorites: number;
-  sellerUsername: string;
   dateCreated: Date;
   isActive: boolean;
   isSold: boolean;
   isShippingAvailable: boolean;
+  isCaseIncluded: boolean;
   comments?: Comment[];
 }
 

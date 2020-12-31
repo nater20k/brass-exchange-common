@@ -39,12 +39,9 @@ export class FormBuilderService {
 
   updateInstrumentForm(instrument: Partial<Instrument>): FormGroup {
     const {
-      price,
       brand,
       key,
       manufactureDate,
-      sellerEmail,
-      isCaseIncluded,
       location,
       description,
       photoUrls,
@@ -57,17 +54,14 @@ export class FormBuilderService {
     return this.fb.group({
       type: this.fc.fetchRequiredFormControl(type),
       brand: this.fc.fetchRequiredFormControl(brand),
-      price: this.fc.fetchRequiredFormControl(price),
       key: this.fc.fetchBasicFormControl(key),
       manufactureDate: this.fc.fetchBasicFormControl(manufactureDate),
-      sellerEmail: this.fc.fetchRequiredEmailFormControl(sellerEmail),
       location: this.fb.group({
         streetAddress: this.fc.fetchBasicFormControl(location.streetAddress),
         city: this.fc.fetchRequiredFormControl(location.city),
         state: this.fc.fetchRequiredFormControl(location.state),
         zip: this.fc.fetchRequiredFormControl(location.zip),
       }),
-      isCaseIncluded: this.fc.fetchBasicFormControl(isCaseIncluded),
       description: this.fc.fetchBasicFormControl(description),
       photoUrls: this.fc.fetchBasicFormArray(photoUrls),
       valveCount: this.fc.fetchBasicFormControl(valveCount),
